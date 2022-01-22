@@ -27,6 +27,7 @@ export const mapDispatchToProps = {
   decrement: decrementAction,
   incrementAsync: incrementAsyncAction,
 }
+// 避免出错使用any
 const StoreActions: any = connect(mapStateToProps, mapDispatchToProps)
 export {StoreActions}
 
