@@ -1,17 +1,22 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import './index.css'
+import App from './App'
+import reportWebVitals from './reportWebVitals'
+
+// 引入 Provider
+import {Provider} from 'react-redux'
+// 引入 store
+import store from './store'
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    {/* 应用store并包裹需要共享的组件 */}
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
-);
+)
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+reportWebVitals()
